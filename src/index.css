@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-accent: var(--color-indigo-500);
+  --color-muted: var(--color-gray-500);
+
+  --color-dark: var(--color-gray-950);
+  --color-dark-2: var(--color-gray-900);
+  --color-dark-3: var(--color-gray-800);
+  --color-dark-4: var(--color-gray-700);
+  --color-dark-5: var(--color-gray-600);
+
+  --color-light: var(--color-white);
+  --color-light-2: var(--color-gray-100);
+  --color-light-3: var(--color-gray-200);
+  --color-light-4: var(--color-gray-300);
+  --color-light-5: var(--color-gray-400);
+}
+
+.dark {
+  --color-accent: var(--color-indigo-400);
+}
+
+@layer base {
+  body {
+    @apply bg-light text-dark dark:text-light selection:bg-accent selection:text-light dark:bg-dark h-[200vh] transition-colors;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply leading-tight text-pretty max-md:text-balance;
+  }
+
+  p {
+    @apply leading-relaxed text-pretty max-md:text-balance;
+  }
+}
+
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility container {
+  @apply mx-auto h-full max-w-7xl px-8;
+}
