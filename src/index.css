@@ -26,9 +26,6 @@
 }
 
 @layer base {
-  * {
-    @apply duration-1000;
-  }
   body {
     @apply bg-light text-dark dark:text-light selection:bg-accent/20 selection:text-accent dark:bg-dark mb-700 transition-colors;
   }
