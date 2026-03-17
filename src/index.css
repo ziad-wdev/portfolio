@@ -4,6 +4,7 @@
 
 @theme {
   --color-accent: var(--color-indigo-500);
+  --color-accent-dark: var(--color-indigo-600);
   --color-muted: var(--color-gray-500);
 
   --color-dark: var(--color-gray-950);
@@ -21,11 +22,12 @@
 
 .dark {
   --color-accent: var(--color-indigo-400);
+  --color-accent-dark: var(--color-indigo-500);
 }
 
 @layer base {
   body {
-    @apply bg-light text-dark dark:text-light selection:bg-accent selection:text-light dark:bg-dark h-[200vh] transition-colors;
+    @apply bg-light text-dark dark:text-light selection:bg-accent/20 selection:text-accent dark:bg-dark mb-700 transition-colors;
   }
 
   h1,
@@ -34,11 +36,11 @@
   h4,
   h5,
   h6 {
-    @apply leading-tight text-pretty max-md:text-balance;
+    @apply leading-tight text-balance;
   }
 
   p {
-    @apply leading-relaxed text-pretty max-md:text-balance;
+    @apply leading-relaxed text-balance;
   }
 }
 
