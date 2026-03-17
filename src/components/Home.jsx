@@ -11,39 +11,42 @@ export default function Home() {
   }
 
   return (
-    <section className="flex-center container min-h-screen gap-8 py-40 max-md:flex-col md:justify-between">
-      <div className="max-w-lg flex-1 max-md:text-center">
-        <span className="bg-accent/10 text-accent inset-ring-accent/20 mb-4 inline-block rounded-lg p-2 font-medium uppercase inset-ring max-md:text-sm">
+    <section
+      id="home"
+      className="flex-center container min-h-screen gap-8 py-40 max-lg:flex-col lg:justify-between"
+    >
+      <div className="max-w-lg max-lg:text-center">
+        <span className="bg-accent/10 text-accent inset-ring-accent/20 mb-4 inline-block rounded-lg p-2 font-medium uppercase inset-ring max-lg:text-sm">
           available for new opportunities
         </span>
-        <h2 className="mb-6 text-4xl md:text-5xl">
+        <h1 className="mb-6">
           Hi, I'm <span className="text-accent">Ziad</span>. Building digital
           experiences that matter.
-        </h2>
-        <p className="mb-8 md:text-lg">
+        </h1>
+        <p className="mb-8">
           A full-stack developer passionate about creating clean, performant,
           and user-centric applications.
         </p>
-        <div className="flex-center flex-wrap gap-4 md:justify-start">
+        <div className="flex-center flex-wrap gap-4 lg:justify-start">
           <a
             href="#projects"
             onClick={handleLinkClick}
-            className="bg-accent hover:bg-accent-dark cursor-pointer rounded-xl px-4 py-2 font-medium text-white transition-colors md:px-6 md:py-4"
+            className="bg-accent hover:bg-accent-dark cursor-pointer rounded-xl px-4 py-2 font-medium text-white transition-colors lg:px-6 lg:py-4"
           >
             View Projects
           </a>
           <a
             href="#Contact"
             onClick={handleLinkClick}
-            className="bg-light-2 hover:bg-light-3 border-light-3 dark:bg-dark-2 dark:hover:bg-dark-3 dark:border-dark-3 cursor-pointer rounded-xl border px-4 py-2 font-medium transition-colors md:px-6 md:py-4"
+            className="bg-light-2 hover:bg-light-3 border-light-3 dark:bg-dark-2 dark:hover:bg-dark-3 dark:border-dark-3 cursor-pointer rounded-xl border px-4 py-2 font-medium transition-colors lg:px-6 lg:py-4"
           >
             Contact Me
           </a>
         </div>
       </div>
 
-      <div className="relative aspect-square w-full max-w-lg flex-1">
-        <div className="absolute top-0 right-0 bottom-12 left-12 overflow-hidden rounded-3xl">
+      <div className="relative aspect-square w-full max-w-lg">
+        <div className="absolute top-0 right-0 bottom-12 left-12 aspect-square overflow-hidden rounded-3xl">
           <img
             src="src/assets/laptop.jpg"
             alt=""
@@ -51,7 +54,7 @@ export default function Home() {
           />
           <div className="bg-accent absolute inset-0 mix-blend-soft-light"></div>
         </div>
-        <div className="card absolute bottom-0 left-0">
+        <div className="card absolute bottom-0 left-0 origin-bottom-left max-[500px]:scale-75">
           <h4 className="mb-4">Tech Stack</h4>
           <div className="grid grid-cols-3 gap-4">
             <StackIcon icon="mdi:language-typescript" text="TypeScript" />

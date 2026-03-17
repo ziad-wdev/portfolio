@@ -35,7 +35,7 @@ export default function Header() {
     >
       <div className="container flex items-center justify-between">
         <h1 className="text-accent text-2xl">ziad.dev</h1>
-        <div className="flex-center gap-8 max-md:gap-6">
+        <div className="flex-center gap-6 sm:gap-8">
           <Nav></Nav>
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}

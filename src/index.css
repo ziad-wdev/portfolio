@@ -3,8 +3,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-accent: var(--color-indigo-500);
-  --color-accent-dark: var(--color-indigo-600);
+  --color-accent: var(--color-sky-500);
+  --color-accent-dark: var(--color-sky-600);
   --color-muted: var(--color-gray-500);
 
   --color-dark: var(--color-gray-950);
@@ -21,11 +21,14 @@
 }
 
 .dark {
-  --color-accent: var(--color-indigo-400);
-  --color-accent-dark: var(--color-indigo-500);
+  --color-accent: var(--color-sky-400);
+  --color-accent-dark: var(--color-sky-500);
 }
 
 @layer base {
+  * {
+    @apply duration-1000;
+  }
   body {
     @apply bg-light text-dark dark:text-light selection:bg-accent/20 selection:text-accent dark:bg-dark mb-700 transition-colors;
   }
@@ -37,6 +40,10 @@
   h5,
   h6 {
     @apply leading-tight font-bold text-balance;
+  }
+
+  h1 {
+    @apply text-4xl lg:text-5xl;
   }
 
   h2 {
@@ -52,16 +59,8 @@
   }
 
   p {
-    @apply text-dark-5 dark:text-light-5 leading-relaxed text-pretty;
+    @apply text-dark-5 dark:text-light-5 leading-relaxed text-pretty md:text-lg lg:text-xl;
   }
-}
-
-@utility flex-center {
-  @apply flex items-center justify-center;
-}
-
-@utility container {
-  @apply mx-auto h-full max-w-7xl px-8;
 }
 
 @layer components {
@@ -72,4 +71,16 @@
   .darker-card {
     @apply bg-light-3 border-light-4 dark:bg-dark-3 dark:border-dark-4 rounded-2xl border p-6 transition-colors;
   }
+
+  .skill-badge {
+    @apply bg-light-4 dark:bg-dark-4 hover:text-accent text-dark-4 dark:text-light-4 inline-block cursor-default rounded-lg p-2 text-[12px] font-bold tracking-wider transition-colors;
+  }
+}
+
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility container {
+  @apply mx-auto h-full max-w-7xl px-8;
 }

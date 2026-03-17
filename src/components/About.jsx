@@ -1,12 +1,10 @@
-import SkillBadge from "./SkillBadge";
-
 export default function About() {
   return (
-    <section className="bg-light-2 dark:bg-dark-2">
-      <div className="flex-center container gap-8 py-20">
+    <section id="about" className="bg-light-2 dark:bg-dark-2">
+      <div className="lg:flex-center container flex gap-8 py-20 max-lg:flex-col">
         <div className="flex-1 space-y-6">
           <h2>About My Journey</h2>
-          <div className="space-y-4 md:text-lg">
+          <div className="space-y-4">
             <p>
               I started my coding journey 5 years ago, driven by a curiosity for
               how things work on the internet. What began as simple HTML/CSS
@@ -27,23 +25,23 @@ export default function About() {
             </p>
           </div>
         </div>
-        <div className="grid flex-1 grid-cols-2 gap-6">
+        <div className="grid flex-1 grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-2">
           <div className="darker-card">
             <h4 className="mb-4 flex items-center gap-2">
               <span className="bg-accent inline-block size-2 rounded-full"></span>{" "}
               Frontend
             </h4>
             <div className="flex flex-wrap gap-2">
-              <SkillBadge text="Bootstrap" />
-              <SkillBadge text="Tailwind CSS" />
-              <SkillBadge text="Framer Motion" />
-              <SkillBadge text="TypeScript" />
-              <SkillBadge text="React" />
-              <SkillBadge text="Vite" />
-              <SkillBadge text="Next.js" />
-              <SkillBadge text="Redux" />
-              <SkillBadge text="TanStack Query" />
-              <SkillBadge text="Zustand" />
+              <span className="skill-badge">Bootstrap</span>
+              <span className="skill-badge">Tailwind CSS</span>
+              <span className="skill-badge">Framer Motion</span>
+              <span className="skill-badge">TypeScript</span>
+              <span className="skill-badge">React</span>
+              <span className="skill-badge">Vite</span>
+              <span className="skill-badge">Next.js</span>
+              <span className="skill-badge">Redux</span>
+              <span className="skill-badge">TanStack Query</span>
+              <span className="skill-badge">Zustand</span>
             </div>
           </div>
           <div className="darker-card">
@@ -55,8 +53,8 @@ export default function About() {
               </span>
             </h4>
             <div className="flex flex-wrap gap-2">
-              <SkillBadge text="Node.js" />
-              <SkillBadge text="MongoDB" />
+              <span className="skill-badge">Node.js</span>
+              <span className="skill-badge">MongoDB</span>
             </div>
           </div>
           <div className="darker-card">
@@ -65,10 +63,10 @@ export default function About() {
               Tools
             </h4>
             <div className="flex flex-wrap gap-2">
-              <SkillBadge text="Git" />
-              <SkillBadge text="GitHub" />
-              <SkillBadge text="Vercel" />
-              <SkillBadge text="Zed" />
+              <span className="skill-badge">Git</span>
+              <span className="skill-badge">GitHub</span>
+              <span className="skill-badge">Vercel</span>
+              <span className="skill-badge">Zed</span>
             </div>
           </div>
         </div>

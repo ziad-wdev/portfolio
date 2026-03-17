@@ -25,8 +25,8 @@ export default function Nav() {
   function handleLinkClick(e) {
     e.preventDefault();
     setIsOpened(false);
-    const targetId = e.target.getAttribute("href").substring(1);
-    const targetElement = document.getElementById(targetId);
+    const targetId = e.target.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth" });
     }
@@ -36,13 +36,13 @@ export default function Nav() {
     <>
       <button
         onClick={() => setIsOpened(!isOpened)}
-        className="hover:text-accent inline-block cursor-pointer text-2xl transition-all active:scale-95 md:hidden"
+        className="hover:text-accent inline-block cursor-pointer text-2xl transition-all active:scale-95 sm:hidden"
       >
         {isOpened ? <Icon icon="lucide:x" /> : <Icon icon="lucide:menu" />}
       </button>
       <nav
         className={cn(
-          "bg-light-2 dark:bg-dark-2 border-light-3 dark:border-dark-3 absolute top-full right-0 left-0 flex origin-top flex-col gap-2 border-y px-4 py-2 transition-all md:hidden",
+          "bg-light-2 dark:bg-dark-2 border-light-3 dark:border-dark-3 absolute top-full right-0 left-0 flex origin-top flex-col gap-2 border-y px-4 py-2 transition-all sm:hidden",
           {
             "scale-y-0 opacity-0": !isOpened,
           },
@@ -77,7 +77,7 @@ export default function Nav() {
           Contact
         </a>
       </nav>
-      <nav className="flex-center gap-8 max-md:hidden">
+      <nav className="flex-center gap-8 max-sm:hidden">
         <a
           href="#home"
           onClick={handleLinkClick}
