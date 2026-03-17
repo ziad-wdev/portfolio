@@ -13,14 +13,14 @@ export default function Home() {
   return (
     <section className="flex-center container min-h-screen gap-8 py-40 max-md:flex-col md:justify-between">
       <div className="max-w-lg flex-1 max-md:text-center">
-        <span className="bg-accent/10 text-accent inset-ring-accent/20 mb-4 inline-block rounded-lg px-2 py-1 font-medium uppercase inset-ring max-md:text-sm">
+        <span className="bg-accent/10 text-accent inset-ring-accent/20 mb-4 inline-block rounded-lg p-2 font-medium uppercase inset-ring max-md:text-sm">
           available for new opportunities
         </span>
-        <h2 className="lg:text- mb-6 text-4xl font-bold md:text-5xl">
+        <h2 className="mb-6 text-4xl md:text-5xl">
           Hi, I'm <span className="text-accent">Ziad</span>. Building digital
           experiences that matter.
         </h2>
-        <p className="text-dark-5 dark:text-light-5 mb-8 md:text-lg">
+        <p className="mb-8 md:text-lg">
           A full-stack developer passionate about creating clean, performant,
           and user-centric applications.
         </p>
@@ -51,8 +51,8 @@ export default function Home() {
           />
           <div className="bg-accent absolute inset-0 mix-blend-soft-light"></div>
         </div>
-        <div className="bg-light-2 border-light-3 dark:bg-dark-2 dark:border-dark-3 absolute bottom-0 left-0 rounded-2xl border p-6 transition-colors">
-          <h3 className="mb-4 font-bold">Tech Stack</h3>
+        <div className="card absolute bottom-0 left-0">
+          <h4 className="mb-4">Tech Stack</h4>
           <div className="grid grid-cols-3 gap-4">
             <StackIcon icon="mdi:language-typescript" text="TypeScript" />
             <StackIcon icon="mdi:tailwind" text="Tailwind CSS" />
