@@ -1,93 +1,130 @@
-# Portfolio Project
+# Ziad's Developer Portfolio
 
-This repository contains my personal portfolio website, built with React, Vite, and Tailwind CSS. It showcases my skills, projects, and experience as a software engineer.
+A personal portfolio website built with React and Vite, showcasing projects, skills, and a way to get in touch.
 
-## What the Project Does
+## Features
 
-This project serves as an interactive online resume and portfolio. It allows visitors to:
+- **Responsive Design** — Mobile-first layout with an adaptive navigation menu
+- **Dark / Light Mode** — System-aware theme with manual toggle, persisted in `localStorage`
+- **Dynamic Projects** — Fetches live project data (metadata + screenshots) from the GitHub API and Microlink API
+- **Contact Form** — Functional email form powered by EmailJS with client-side validation
+- **Smooth Scrolling** — Anchor-based single-page navigation with smooth scroll behavior
+- **Toast Notifications** — Real-time feedback for form submissions via Sonner
+- **GitHub Pages Deployment** — One-command deploy with `gh-pages`
 
-- Learn about my background and skills.
-- Explore various projects I've worked on, complete with descriptions and links.
-- View my professional experience and education.
-- Contact me through provided channels.
+## Tech Stack
 
-## Why the Project Is Useful
+| Layer           | Technology             |
+| --------------- | ---------------------- |
+| UI Framework    | React 19               |
+| Build Tool      | Vite 8                 |
+| Styling         | Tailwind CSS v4        |
+| Animations      | Motion (Framer Motion) |
+| Form Management | TanStack Form          |
+| Email Service   | EmailJS                |
+| HTTP Client     | Axios                  |
+| Icons           | Iconify                |
+| Notifications   | Sonner                 |
+| Deployment      | GitHub Pages           |
 
-This portfolio is useful for:
-
-- **Prospective Employers:** Provides a comprehensive overview of my capabilities and past work.
-- **Collaborators:** Offers insight into my expertise for potential partnerships.
-- **Personal Branding:** Establishes my online presence as a software engineer.
-- **Learning & Development:** Acts as a sandbox for experimenting with new web technologies and design patterns.
-
-**Key Features:**
-
-- **Responsive Design:** Optimized for various screen sizes, from mobile to desktop.
-- **Modern UI/UX:** Built with Tailwind CSS for a clean, maintainable, and visually appealing interface.
-- **Component-Based Architecture:** Utilizes React for modular and reusable UI components.
-- **Fast Development:** Leverages Vite for a quick development server and optimized builds.
-
-## How Users Can Get Started
-
-To get a local copy up and running, follow these simple steps.
+## Getting Started
 
 ### Prerequisites
 
-Make sure you have Node.js and npm (or yarn) installed on your machine.
-
-- npm
-  ```bash
-  npm install npm@latest -g
-  ```
+- [Node.js](https://nodejs.org/) v18 or later
+- npm v9 or later
 
 ### Installation
 
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/portfolio.git
-    ```
-2.  Navigate into the project directory:
-    ```bash
-    cd portfolio
-    ```
-3.  Install dependencies:
-    ```bash
-    npm install
-    ```
+1. **Clone the repository**
 
-### Usage
+   ```sh
+   git clone https://github.com/ziad-wdev/portfolio.git
+   cd portfolio
+   ```
 
-To start the development server:
+2. **Install dependencies**
 
-```bash
-npm run dev
+   ```sh
+   npm install
+   ```
+
+3. **Set up environment variables**
+
+   Create a `.env` file in the project root. The contact form requires an [EmailJS](https://www.emailjs.com/) account:
+
+   ```sh
+   VITE_EMAILJS_SERVICE_ID=your_service_id
+   VITE_EMAILJS_TEMPLATE_ID=your_template_id
+   VITE_EMAILJS_PUBLIC_KEY=your_public_key
+   ```
+
+   > The Projects section fetches data from the public GitHub API and [Microlink](https://microlink.io/) — no API keys are needed for those.
+
+4. **Start the development server**
+
+   ```sh
+   npm run dev
+   ```
+
+   The site is served at `http://localhost:3000`.
+
+## Available Scripts
+
+| Script            | Description                                         |
+| ----------------- | --------------------------------------------------- |
+| `npm run dev`     | Start the local development server (LAN-accessible) |
+| `npm run build`   | Create a production build in `dist/`                |
+| `npm run preview` | Preview the production build locally                |
+| `npm run lint`    | Run ESLint across all source files                  |
+| `npm run deploy`  | Build and publish to GitHub Pages                   |
+
+## Project Structure
+
+```
+portfolio/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── assets/          # Static assets (images, etc.)
+│   ├── components/
+│   │   ├── Header.jsx   # Sticky header with dark mode toggle
+│   │   ├── Nav.jsx      # Responsive navigation (mobile + desktop)
+│   │   ├── Home.jsx     # Hero section with tech stack card
+│   │   ├── About.jsx    # Bio and categorised skill badges
+│   │   ├── Projects.jsx # GitHub-powered project cards
+│   │   ├── Contact.jsx  # Contact details + form
+│   │   ├── Form.jsx     # Validated EmailJS contact form
+│   │   ├── Footer.jsx   # Social links footer
+│   │   └── StackIcon.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── index.html
+├── vite.config.js
+└── package.json
 ```
 
-This will open the application in your browser, usually at `http://localhost:5173`.
+## Deployment
 
-To build the project for production:
+The project is configured for GitHub Pages. After setting your `homepage` field in `package.json` (if needed), a single command builds and publishes the site:
 
-```bash
-npm run build
+```sh
+npm run deploy
 ```
 
-The compiled assets will be placed in the `dist` directory.
+This runs `vite build` and then pushes the `dist/` folder to the `gh-pages` branch.
 
-## Where Users Can Get Help
+## Contact & Support
 
-If you have any questions or encounter issues, please feel free to reach out:
+| Channel  | Link                                                              |
+| -------- | ----------------------------------------------------------------- |
+| Email    | [ziadahmed2371@gmail.com](mailto:ziadahmed2371@gmail.com)         |
+| LinkedIn | [linkedin.com/in/ziad2371](https://www.linkedin.com/in/ziad2371/) |
+| GitHub   | [github.com/ziad-wdev](https://github.com/ziad-wdev)              |
 
-- **Email:** your.email@example.com
-- **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/yourprofile)
+Feel free to open an issue for bugs or suggestions, or reach out directly via email or LinkedIn.
 
-## Who Maintains and Contributes
+## License
 
-### Maintainer
-
-- **Ziad**: [GitHub Profile](https://github.com/ziad)
-
-### Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
-
-Please refer to the `CONTRIBUTING.md` file for detailed guidelines on how to contribute to this project.
+This project is open source. See the [LICENSE](LICENSE) file for details.
