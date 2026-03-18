@@ -1,10 +1,10 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-accent: var(--color-sky-500);
-  --color-accent-dark: var(--color-sky-600);
+  --color-accent: var(--color-indigo-500);
+  --color-accent-dark: var(--color-indigo-600);
   --color-muted: var(--color-gray-500);
 
   --color-dark: var(--color-gray-950);
@@ -21,13 +21,13 @@
 }
 
 .dark {
-  --color-accent: var(--color-sky-400);
-  --color-accent-dark: var(--color-sky-500);
+  --color-accent: var(--color-indigo-400);
+  --color-accent-dark: var(--color-indigo-500);
 }
 
 @layer base {
   body {
-    @apply bg-light text-dark dark:text-light selection:bg-accent/20 selection:text-accent dark:bg-dark mb-700 transition-colors;
+    @apply bg-light text-dark dark:text-light selection:bg-accent/20 selection:text-accent dark:bg-dark transition-colors;
   }
 
   h1,
