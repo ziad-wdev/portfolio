@@ -3,31 +3,46 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --color-accent-light: var(--color-indigo-300);
   --color-accent: var(--color-indigo-500);
-  --color-accent-dark: var(--color-indigo-600);
-  --color-muted: var(--color-gray-500);
+  --color-accent-dark: var(--color-indigo-700);
+  --color-muted: var(--color-zinc-500);
 
-  --color-dark: var(--color-gray-950);
-  --color-dark-2: var(--color-gray-900);
-  --color-dark-3: var(--color-gray-800);
-  --color-dark-4: var(--color-gray-700);
-  --color-dark-5: var(--color-gray-600);
+  --color-dark: var(--color-zinc-950);
+  --color-dark-2: var(--color-zinc-900);
+  --color-dark-3: var(--color-zinc-800);
+  --color-dark-4: var(--color-zinc-700);
+  --color-dark-5: var(--color-zinc-600);
 
   --color-light: var(--color-white);
-  --color-light-2: var(--color-gray-100);
-  --color-light-3: var(--color-gray-200);
-  --color-light-4: var(--color-gray-300);
-  --color-light-5: var(--color-gray-400);
+  --color-light-2: var(--color-zinc-100);
+  --color-light-3: var(--color-zinc-200);
+  --color-light-4: var(--color-zinc-300);
+  --color-light-5: var(--color-zinc-400);
+
+  --text-xs: 0.75rem;
+  --text-2xs: 0.625rem;
 }
 
 .dark {
-  --color-accent: var(--color-indigo-400);
-  --color-accent-dark: var(--color-indigo-500);
+  --color-accent-light: var(--color-indigo-400);
+  --color-accent: var(--color-indigo-600);
+  --color-accent-dark: var(--color-indigo-800);
 }
 
 @layer base {
+  * {
+    @apply transition-colors;
+  }
+
   body {
-    @apply bg-light text-dark dark:text-light selection:bg-accent/20 selection:text-accent dark:bg-dark transition-colors;
+    @apply bg-light text-dark dark:text-light selection:bg-accent/20 selection:text-accent dark:bg-dark;
+  }
+
+  header,
+  section,
+  footer {
+    @apply flex-center px-8 py-24;
   }
 
   h1,
@@ -56,21 +71,36 @@
   }
 
   p {
-    @apply text-dark-5 dark:text-light-5 leading-relaxed text-pretty md:text-lg lg:text-xl;
+    @apply text-dark-5 dark:text-light-5 leading-relaxed text-pretty md:text-lg;
+  }
+
+  img {
+    @apply flex-center italic;
   }
 }
 
 @layer components {
   .card {
-    @apply bg-light-2 border-light-3 dark:bg-dark-2 dark:border-dark-3 rounded-2xl border p-6 transition-colors;
+    @apply bg-light-2 border-light-3 dark:bg-dark-2 dark:border-dark-3 rounded-2xl border p-6;
   }
 
-  .darker-card {
-    @apply bg-light-3 border-light-4 dark:bg-dark-3 dark:border-dark-4 rounded-2xl border p-6 transition-colors;
+  .dark-card {
+    @apply bg-light-3 border-light-4 dark:bg-dark-3 dark:border-dark-4 rounded-2xl border p-6;
   }
 
   .skill-badge {
-    @apply bg-light-4 dark:bg-dark-4 hover:text-accent text-dark-4 dark:text-light-4 inline-block cursor-default rounded-lg p-2 text-[12px] font-bold tracking-wider transition-colors;
+    @apply bg-light-4 dark:bg-dark-4 hover:text-accent dark:hover:text-accent-light text-dark-4 dark:text-light-4 inline-block cursor-default rounded-lg p-2 text-xs font-bold tracking-wider;
+  }
+
+  .form-field {
+    & label {
+      @apply text-dark-4 dark:text-light-4 text-sm font-bold uppercase;
+    }
+
+    & input,
+    & textarea {
+      @apply bg-light-2 border-light-4 dark:bg-dark-2 dark:border-dark-4 placeholder:text-muted ring-accent w-full resize-none rounded-xl border px-4 py-3 outline-none focus:ring-2;
+    }
   }
 }
 
@@ -79,5 +109,5 @@
 }
 
 @utility container {
-  @apply mx-auto h-full max-w-7xl px-8;
+  @apply max-w-7xl;
 }

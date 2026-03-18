@@ -1,8 +1,8 @@
 export default function About() {
   return (
     <section id='about' className='bg-light-2 dark:bg-dark-2'>
-      <div className='lg:flex-center container flex gap-8 py-20 max-lg:flex-col'>
-        <div className='flex-1 space-y-6'>
+      <div className='container flex gap-16 max-lg:flex-col lg:flex'>
+        <div className='w-full space-y-6'>
           <h2>About My Journey</h2>
           <div className='space-y-4'>
             <p>
@@ -21,8 +21,8 @@ export default function About() {
             </p>
           </div>
         </div>
-        <div className='grid flex-1 grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-2'>
-          <div className='darker-card'>
+        <div className='grid w-full grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-2'>
+          <div className='dark-card'>
             <h4 className='mb-4 flex items-center gap-2'>
               <span className='bg-accent inline-block size-2 rounded-full'></span> Frontend
             </h4>
@@ -39,7 +39,7 @@ export default function About() {
               <span className='skill-badge'>Zustand</span>
             </div>
           </div>
-          <div className='darker-card'>
+          <div className='dark-card'>
             <h4 className='mb-4 flex items-center gap-2'>
               <span className='bg-accent inline-block size-2 rounded-full'></span> Backend{' '}
               <span className='text-[12px] font-bold text-yellow-500'>( WiP )</span>
@@ -49,7 +49,7 @@ export default function About() {
               <span className='skill-badge'>MongoDB</span>
             </div>
           </div>
-          <div className='darker-card'>
+          <div className='dark-card'>
             <h4 className='mb-4 flex items-center gap-2'>
               <span className='bg-accent inline-block size-2 rounded-full'></span> Tools
             </h4>

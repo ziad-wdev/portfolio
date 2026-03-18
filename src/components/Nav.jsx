@@ -29,7 +29,11 @@ export default function Nav() {
     const targetId = e.target.getAttribute('href');
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
+      if (targetId == 'home') {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     }
   }
 
