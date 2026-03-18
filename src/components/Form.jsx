@@ -27,14 +27,14 @@ export default function Form() {
           SERVICE_ID,
           TEMPLATE_ID,
           {
-            from_name: value.name,
-            from_email: value.email,
-            message: value.message,
-            to_email: 'ziadahmed2371@gmail.com',
             from_name_initial: value.name
               .split(' ')
               .map(n => n[0])
-              .join('')
+              .join(''),
+            from_name: value.name,
+            from_email: value.email,
+            message: value.message,
+            email: 'ziadahmed2371@gmail.com'
           },
           PUBLIC_KEY
         );
