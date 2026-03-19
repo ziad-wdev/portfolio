@@ -37,7 +37,7 @@ export default function Nav() {
     <>
       <button
         onClick={() => setIsOpened(!isOpened)}
-        className='hover:text-accent inline-block cursor-pointer text-2xl transition-all active:scale-95 sm:hidden'
+        className='hover:text-accent dark:hover:text-accent-light inline-block cursor-pointer text-2xl transition-all active:scale-95 sm:hidden'
       >
         {isOpened ? <Icon icon='lucide:x' /> : <Icon icon='lucide:menu' />}
       </button>
@@ -52,28 +52,28 @@ export default function Nav() {
         <a
           href='#home'
           onClick={handleLinkClick}
-          className='hover:text-accent hover:bg-light-3 dark:hover:bg-dark-3 inline-block rounded-xl p-4 font-medium transition-all active:scale-x-95'
+          className='hover:text-accent dark:hover:text-accent-light hover:bg-light-3 dark:hover:bg-dark-3 inline-block rounded-xl p-4 font-medium transition-all active:scale-x-95'
         >
           Home
         </a>
         <a
           href='#about'
           onClick={handleLinkClick}
-          className='hover:text-accent hover:bg-light-3 dark:hover:bg-dark-3 inline-block rounded-xl p-4 font-medium transition-all active:scale-x-95'
+          className='hover:text-accent dark:hover:text-accent-light hover:bg-light-3 dark:hover:bg-dark-3 inline-block rounded-xl p-4 font-medium transition-all active:scale-x-95'
         >
           About
         </a>
         <a
           href='#projects'
           onClick={handleLinkClick}
-          className='hover:text-accent hover:bg-light-3 dark:hover:bg-dark-3 inline-block rounded-xl p-4 font-medium transition-all active:scale-x-95'
+          className='hover:text-accent dark:hover:text-accent-light hover:bg-light-3 dark:hover:bg-dark-3 inline-block rounded-xl p-4 font-medium transition-all active:scale-x-95'
         >
           Projects
         </a>
         <a
           href='#contact'
           onClick={handleLinkClick}
-          className='hover:text-accent hover:bg-light-3 dark:hover:bg-dark-3 inline-block rounded-xl p-4 font-medium transition-all active:scale-x-95'
+          className='hover:text-accent dark:hover:text-accent-light hover:bg-light-3 dark:hover:bg-dark-3 inline-block rounded-xl p-4 font-medium transition-all active:scale-x-95'
         >
           Contact
         </a>
@@ -82,28 +82,28 @@ export default function Nav() {
         <a
           href='#home'
           onClick={handleLinkClick}
-          className='hover:text-accent inline-block font-medium transition-all active:scale-95'
+          className='hover:text-accent dark:hover:text-accent-light inline-block font-medium transition-all active:scale-95'
         >
           Home
         </a>
         <a
           href='#about'
           onClick={handleLinkClick}
-          className='hover:text-accent inline-block font-medium transition-all active:scale-95'
+          className='hover:text-accent dark:hover:text-accent-light inline-block font-medium transition-all active:scale-95'
         >
           About
         </a>
         <a
           href='#projects'
           onClick={handleLinkClick}
-          className='hover:text-accent inline-block font-medium transition-all active:scale-95'
+          className='hover:text-accent dark:hover:text-accent-light inline-block font-medium transition-all active:scale-95'
         >
           Projects
         </a>
         <a
           href='#contact'
           onClick={handleLinkClick}
-          className='hover:text-accent inline-block font-medium transition-all active:scale-95'
+          className='hover:text-accent dark:hover:text-accent-light inline-block font-medium transition-all active:scale-95'
         >
           Contact
         </a>
