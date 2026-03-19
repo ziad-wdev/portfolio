@@ -2,7 +2,7 @@
 
 A clean, performant, and fully responsive personal portfolio website built with **React 19** and **Vite 8**. It showcases projects fetched live from the GitHub API, includes a working contact form powered by EmailJS, and supports a persistent dark/light mode.
 
-**Live site → [ziad-wdev.github.io/portfolio](https://ziad-wdev.vercel.app)**
+**Live site → [ziad-wdev.vercel.app](https://ziad-wdev.vercel.app)**
 
 ---
 
