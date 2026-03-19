@@ -6,7 +6,7 @@ export default function About() {
           <h2>About My Journey</h2>
           <div className='space-y-4'>
             <p>
-              I started my coding journey 5 years ago, driven by a curiosity for how things work on the internet. What
+              I started my coding journey a year ago, driven by a curiosity for how things work on the internet. What
               began as simple HTML/CSS experiments quickly evolved into a passion for building complex, scalable web
               applications.
             </p>
@@ -16,8 +16,8 @@ export default function About() {
               technologies to stay at the forefront of the industry.
             </p>
             <p>
-              When I'm not coding, you can find me exploring new hiking trails, reading about space exploration, or
-              experimenting with digital photography.
+              When I'm not coding, you can find me exploring new video games, reading about science theories, or
+              experimenting with new technologies.
             </p>
           </div>
         </div>
