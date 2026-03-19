@@ -1,4 +1,4 @@
-import laptopImg from '../assets/laptop.jpg';
+import homeImg from '../assets/homeImg.jpg';
 import StackIcon from './StackIcon';
 
 export default function Home() {
@@ -45,7 +45,7 @@ export default function Home() {
 
         <div className='relative aspect-square w-full max-w-lg'>
           <div className='absolute top-0 right-0 bottom-12 left-12 aspect-square overflow-hidden rounded-3xl'>
-            <img src={laptopImg} alt='' className='size-full object-cover' />
+            <img src={homeImg} alt='' className='size-full object-cover' />
             <div className='bg-accent dark:bg-accent-light absolute inset-0 mix-blend-soft-light'></div>
           </div>
           <div className='card absolute bottom-0 left-0 origin-bottom-left max-[500px]:scale-75'>
