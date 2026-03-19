@@ -42,7 +42,7 @@ export default function About() {
           <div className='dark-card'>
             <h4 className='mb-4 flex items-center gap-2'>
               <span className='bg-accent inline-block size-2 rounded-full'></span> Backend{' '}
-              <span className='text-[12px] font-bold text-yellow-500'>( WiP )</span>
+              <span className='text-[12px] font-bold text-yellow-600 dark:text-yellow-500'>( WiP )</span>
             </h4>
             <div className='flex flex-wrap gap-2'>
               <span className='skill-badge'>Node.js</span>

@@ -1,130 +1,139 @@
-# Ziad's Developer Portfolio
+# 🗂️ ziad.dev — Personal Portfolio
 
-A personal portfolio website built with React and Vite, showcasing projects, skills, and a way to get in touch.
+A clean, performant, and fully responsive personal portfolio website built with **React 19** and **Vite 8**. It showcases projects fetched live from the GitHub API, includes a working contact form powered by EmailJS, and supports a persistent dark/light mode.
 
-## Features
+**Live site → [ziad-wdev.github.io/portfolio](https://ziad-wdev.github.io/portfolio/)**
 
-- **Responsive Design** — Mobile-first layout with an adaptive navigation menu
-- **Dark / Light Mode** — System-aware theme with manual toggle, persisted in `localStorage`
-- **Dynamic Projects** — Fetches live project data (metadata + screenshots) from the GitHub API and Microlink API
-- **Contact Form** — Functional email form powered by EmailJS with client-side validation
-- **Smooth Scrolling** — Anchor-based single-page navigation with smooth scroll behavior
-- **Toast Notifications** — Real-time feedback for form submissions via Sonner
-- **GitHub Pages Deployment** — One-command deploy with `gh-pages`
+---
 
-## Tech Stack
+## ✨ Features
 
-| Layer           | Technology             |
-| --------------- | ---------------------- |
-| UI Framework    | React 19               |
-| Build Tool      | Vite 8                 |
-| Styling         | Tailwind CSS v4        |
-| Animations      | Motion (Framer Motion) |
-| Form Management | TanStack Form          |
-| Email Service   | EmailJS                |
-| HTTP Client     | Axios                  |
-| Icons           | Iconify                |
-| Notifications   | Sonner                 |
-| Deployment      | GitHub Pages           |
+- **Live GitHub Projects** — Fetches project metadata and auto-generated screenshots via the GitHub & Microlink APIs — no manual updates needed
+- **Working Contact Form** — Sends emails directly via EmailJS with client-side validation powered by TanStack Form
+- **Dark / Light Mode** — Manually toggleable theme that persists across sessions via `localStorage`
+- **Smooth Scroll Navigation** — Responsive sticky navbar with a mobile drawer and anchor-based single-page routing
+- **Toast Notifications** — Real-time success/error feedback on form submission via Sonner
+- **React Compiler** — Babel-powered React Compiler for automatic memoization and optimized re-renders
+- **GitHub Pages Deployment** — One-command build and publish with `gh-pages`
 
-## Getting Started
+---
+
+## 🛠️ Tech Stack
+
+| Category               | Technologies                                |
+| ---------------------- | ------------------------------------------- |
+| **Framework**          | React 19, Vite 8                            |
+| **Styling**            | Tailwind CSS v4, Motion (Framer Motion v12) |
+| **Forms & Validation** | TanStack Form, EmailJS                      |
+| **Data Fetching**      | Axios (GitHub API, Microlink API)           |
+| **UI Utilities**       | Iconify, Sonner, clsx-for-tailwind          |
+| **Tooling**            | ESLint, Babel + React Compiler, gh-pages    |
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) v18 or later
-- npm v9 or later
+- [Node.js](https://nodejs.org/) v18 or higher
+- npm v9 or higher
 
 ### Installation
 
-1. **Clone the repository**
+```sh
+# 1. Clone the repository
+git clone https://github.com/ziad-wdev/portfolio.git
+cd portfolio
 
-   ```sh
-   git clone https://github.com/ziad-wdev/portfolio.git
-   cd portfolio
-   ```
+# 2. Install dependencies
+npm install
 
-2. **Install dependencies**
+# 3. Set up environment variables
+cp .env.example .env.local
+# Then open .env.local and fill in your EmailJS credentials (see below)
 
-   ```sh
-   npm install
-   ```
+# 4. Start the development server
+npm run dev
+```
 
-3. **Set up environment variables**
+The dev server runs on **http://localhost:3000** and is also accessible on your local network.
 
-   Create a `.env` file in the project root. The contact form requires an [EmailJS](https://www.emailjs.com/) account:
+### Environment Variables
 
-   ```sh
-   VITE_EMAILJS_SERVICE_ID=your_service_id
-   VITE_EMAILJS_TEMPLATE_ID=your_template_id
-   VITE_EMAILJS_PUBLIC_KEY=your_public_key
-   ```
+The contact form requires an [EmailJS](https://www.emailjs.com/) account. Add the following to your `.env.local`:
 
-   > The Projects section fetches data from the public GitHub API and [Microlink](https://microlink.io/) — no API keys are needed for those.
+```sh
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
 
-4. **Start the development server**
+> **Note:** All three variables are required for the contact form to work. The rest of the site (including the Projects section) functions without them.
 
-   ```sh
-   npm run dev
-   ```
+---
 
-   The site is served at `http://localhost:3000`.
+## 📜 Available Scripts
 
-## Available Scripts
+| Command           | Description                                                |
+| ----------------- | ---------------------------------------------------------- |
+| `npm run dev`     | Start the development server on port 3000 (LAN-accessible) |
+| `npm run build`   | Build the project for production into `dist/`              |
+| `npm run preview` | Preview the production build locally                       |
+| `npm run lint`    | Run ESLint across all source files                         |
+| `npm run deploy`  | Build and publish to GitHub Pages                          |
 
-| Script            | Description                                         |
-| ----------------- | --------------------------------------------------- |
-| `npm run dev`     | Start the local development server (LAN-accessible) |
-| `npm run build`   | Create a production build in `dist/`                |
-| `npm run preview` | Preview the production build locally                |
-| `npm run lint`    | Run ESLint across all source files                  |
-| `npm run deploy`  | Build and publish to GitHub Pages                   |
+---
 
-## Project Structure
+## 🗂️ Project Structure
 
 ```
 portfolio/
 ├── public/
-│   └── favicon.svg
+│   └── favicon.ico
 ├── src/
-│   ├── assets/          # Static assets (images, etc.)
+│   ├── assets/             # Static assets (images)
 │   ├── components/
-│   │   ├── Header.jsx   # Sticky header with dark mode toggle
-│   │   ├── Nav.jsx      # Responsive navigation (mobile + desktop)
-│   │   ├── Home.jsx     # Hero section with tech stack card
-│   │   ├── About.jsx    # Bio and categorised skill badges
-│   │   ├── Projects.jsx # GitHub-powered project cards
-│   │   ├── Contact.jsx  # Contact details + form
-│   │   ├── Form.jsx     # Validated EmailJS contact form
-│   │   ├── Footer.jsx   # Social links footer
-│   │   └── StackIcon.jsx
+│   │   ├── Header.jsx      # Sticky navbar with dark mode toggle
+│   │   ├── Nav.jsx         # Desktop & mobile (drawer) navigation
+│   │   ├── Home.jsx        # Hero section with tech stack card
+│   │   ├── About.jsx       # Journey narrative & categorised skill badges
+│   │   ├── Projects.jsx    # GitHub API-powered project cards
+│   │   ├── Contact.jsx     # Contact details & form
+│   │   ├── Form.jsx        # EmailJS form with TanStack Form validation
+│   │   ├── StackIcon.jsx   # Reusable tech icon component
+│   │   └── Footer.jsx      # Social links
 │   ├── App.jsx
 │   ├── main.jsx
-│   └── index.css
+│   └── index.css           # Tailwind v4 theme tokens & global styles
+├── .env.example            # Environment variable template
 ├── index.html
 ├── vite.config.js
 └── package.json
 ```
 
-## Deployment
+---
 
-The project is configured for GitHub Pages. After setting your `homepage` field in `package.json` (if needed), a single command builds and publishes the site:
+## 🌍 Deployment
+
+The project is pre-configured for **GitHub Pages**. The Vite `base` is set to `/portfolio/` to match the repository name.
 
 ```sh
 npm run deploy
 ```
 
-This runs `vite build` and then pushes the `dist/` folder to the `gh-pages` branch.
+This runs `vite build` and pushes the `dist/` folder to the `gh-pages` branch automatically. No additional configuration is needed.
 
-## Contact & Support
+---
 
-| Channel  | Link                                                              |
-| -------- | ----------------------------------------------------------------- |
-| Email    | [ziadahmed2371@gmail.com](mailto:ziadahmed2371@gmail.com)         |
-| LinkedIn | [linkedin.com/in/ziad2371](https://www.linkedin.com/in/ziad2371/) |
-| GitHub   | [github.com/ziad-wdev](https://github.com/ziad-wdev)              |
+## 📬 Contact
 
-Feel free to open an issue for bugs or suggestions, or reach out directly via email or LinkedIn.
+**Ziad** — [@ziad-wdev](https://github.com/ziad-wdev)
 
-## License
+- 📧 [ziadahmed2371@gmail.com](mailto:ziadahmed2371@gmail.com)
+- 💼 [linkedin.com/in/ziad2371](https://www.linkedin.com/in/ziad2371/)
 
-This project is open source. See the [LICENSE](LICENSE) file for details.
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
