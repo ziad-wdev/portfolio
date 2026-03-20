@@ -10,7 +10,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(window.scrollY > scrollMargin);
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const stored = localStorage.getItem('darkMode');
-    return stored ? JSON.parse(stored) : true;
+    return stored ? JSON.parse(stored) : false;
   });
 
   useEffect(() => {
