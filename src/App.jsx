@@ -10,15 +10,15 @@ import Projects from './components/Projects.jsx';
 export default function App() {
   return (
     <>
-      <div className='fixed z-50'>
-        <Toaster richColors position='bottom-right' theme='system' />
-      </div>
       <Header />
       <Home />
       <About />
       <Projects />
       <Contact />
       <Footer />
+      <div className='*:p-0'>
+        <Toaster richColors position='bottom-right' theme='system' />
+      </div>
     </>
   );
 }

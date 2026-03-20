@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section id='about' className='bg-light-2 dark:bg-dark-2'>
+    <section id='about'>
       <div className='container flex gap-16 max-lg:flex-col lg:flex'>
         <div className='w-full space-y-6'>
           <h2>About My Journey</h2>

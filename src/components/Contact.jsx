@@ -4,7 +4,7 @@ import Form from './Form';
 
 export default function Contact() {
   return (
-    <section id='contact' className='bg-light-2 dark:bg-dark-2'>
+    <section id='contact'>
       <div className='container flex gap-16 max-lg:flex-col lg:flex'>
         <div className='w-full space-y-6'>
           <h2>Get in Touch</h2>

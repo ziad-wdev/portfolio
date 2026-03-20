@@ -45,6 +45,14 @@
     @apply flex-center px-8 py-24;
   }
 
+  section:nth-of-type(odd) {
+    @apply bg-light dark:bg-dark;
+  }
+
+  section:nth-of-type(even) {
+    @apply bg-light-2 dark:bg-dark-2;
+  }
+
   h1,
   h2,
   h3,
