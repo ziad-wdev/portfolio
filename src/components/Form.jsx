@@ -27,10 +27,11 @@ export default function Form() {
           SERVICE_ID,
           TEMPLATE_ID,
           {
-            from_name: value.name,
-            from_email: value.email,
+            senderName: value.name,
+            SenderEmail: value.email,
             message: value.message,
-            email: 'ziadahmed2371@gmail.com'
+            email: 'ziadahmed2371@gmail.com',
+            date: new Date().toLocaleString('en-US', { dateStyle: 'long', timeStyle: 'short' })
           },
           PUBLIC_KEY
         );
