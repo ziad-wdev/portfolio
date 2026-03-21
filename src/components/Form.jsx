@@ -27,10 +27,6 @@ export default function Form() {
           SERVICE_ID,
           TEMPLATE_ID,
           {
-            from_name_initial: value.name
-              .split(' ')
-              .map(n => n[0])
-              .join(''),
             from_name: value.name,
             from_email: value.email,
             message: value.message,
