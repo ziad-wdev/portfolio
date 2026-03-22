@@ -34,7 +34,7 @@ export default function Home() {
               View Projects
             </a>
             <a
-              href='#Contact'
+              href='#contact'
               onClick={handleLinkClick}
               className='bg-light-2 hover:bg-light-3 border-light-3 dark:bg-dark-2 dark:hover:bg-dark-3 dark:border-dark-3 cursor-pointer rounded-xl border px-4 py-2 font-medium lg:px-6 lg:py-4'
             >
