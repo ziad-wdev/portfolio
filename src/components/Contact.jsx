@@ -36,11 +36,11 @@ export default function Contact() {
             <div>
               <p className='text-muted text-sm font-medium tracking-wider uppercase'>linkedin</p>
               <a
-                href='https://www.linkedin.com/in/ziad2371'
+                href='https://www.linkedin.com/in/ziad-wdev'
                 target='_blank'
                 className='text-dark dark:text-light text-lg font-bold'
               >
-                in/ziad2371
+                in/ziad-wdev
               </a>
             </div>
           </div>
