@@ -16,7 +16,7 @@ export default function Footer() {
             <Icon icon='lucide:github' />
           </a>
           <a
-            href='https://www.linkedin.com/in/ziad2371'
+            href='https://www.linkedin.com/in/ziad-wdev'
             target='_blank'
             className='text-dark-5 dark:text-light-5 hover:text-accent dark:hover:text-accent-light'
           >
