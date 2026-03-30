@@ -2,9 +2,10 @@
 
 # Configuration
 REPO_OWNER="ziad-wdev"
-PROJECT_NAMES=("AESTHETIC" "FreshFlavor" "DigitalPro")
+REPOS=("AESTHETIC" "FreshFlavor" "DigitalPro")
 
-IMAGE_DIR="src/assets/projects"
+# Using public/ so the browser can find the images at "/projects/name.jpg"
+IMAGE_DIR="public/projects"
 DATA_FILE="src/data/projects-data.json"
 
 # Create directories and initialize data file
@@ -12,40 +13,52 @@ mkdir -p "$IMAGE_DIR"
 mkdir -p "src/data"
 echo "[]" > "$DATA_FILE"
 
-for NAME in "${PROJECT_NAMES[@]}"; do
-    echo "Processing $NAME..."
+for REPO in "${REPOS[@]}"; do
+    echo "--- Processing $REPO ---"
 
     # 1. Fetch GitHub Data
-    REPO_DATA=$(curl -s "https://api.github.com/repos/$REPO_OWNER/$NAME")
+    # Extract data with safe fallbacks
+    echo "Fetching data for $REPO..."
+    REPO_DATA=$(curl -s "https://api.github.com/repos/$REPO_OWNER/$REPO")
 
-    # Extract repository data
-    NAME=$(echo "$REPO_DATA" | jq -r '.name')
-    DESC=$(echo "$REPO_DATA" | jq -r '.description // "placeholder description"')
+    NAME=$(echo "$REPO_DATA" | jq -r '.name // "'$REPO'"')
+    DESC=$(echo "$REPO_DATA" | jq -r '.description // "A modern web application."')
     TOPICS=$(echo "$REPO_DATA" | jq -c '.topics // []')
-    HOMEPAGE=$(echo "$REPO_DATA" | jq -r '.homepage // "https://github.com/'$REPO_OWNER'/'$NAME'"')
+    HOMEPAGE=$(echo "$REPO_DATA" | jq -r '.homepage // empty')
     GITHUB_URL=$(echo "$REPO_DATA" | jq -r '.html_url')
 
-    FILE_NAME="${NAME,,}.jpg" # lowercase filename
-    LOCAL_IMG_PATH="/projects/$FILE_NAME"
+    # Logic for image path and screenshot
+    FILE_NAME="${REPO,,}.jpeg"
+    PLACEHOLDER_PATH="https://via.placeholder.com/1920x1080.png?text=Preview+Coming+Soon"
 
-    # 2. Fetch Screenshot using Microlink (only if homepage exists)
     if [ ! -z "$HOMEPAGE" ]; then
-        echo "Capturing screenshot for $HOMEPAGE..."
+        echo "Capturing screenshot for $REPO..."
         SCREENSHOT_URL="https://api.microlink.io?screenshot.type=jpeg&viewport.width=1920&viewport.height=1080&url=$HOMEPAGE"
-        # Download and save the image locally
-        curl -L -s "$(curl -s "$SCREENSHOT_URL" | jq -r '.data.screenshot.url // "https://via.placeholder.com/1920x1080.png"')" -o "$IMAGE_DIR/$FILE_NAME"
+
+        # Get the actual image URL from Microlink
+        IMG_DOWNLOAD_URL=$(curl -s "$SCREENSHOT_URL" | jq -r '.data.screenshot.url // empty')
+
+        if [ ! -z "$IMG_DOWNLOAD_URL" ]; then
+            curl -L -s "$IMG_DOWNLOAD_URL" -o "$IMAGE_DIR/$FILE_NAME"
+            IMG_PATH="/projects/$FILE_NAME"
+        else
+            # If Microlink fails, use a generic placeholder
+            IMG_PATH="$PLACEHOLDER_PATH"
+        fi
+
     else
-        # Fallback image if no homepage exists
-        LOCAL_IMG_PATH="https://via.placeholder.com/1920x1080.png"
+        echo "No homepage found. Using GitHub URL as fallback."
+        IMG_PATH="$PLACEHOLDER_PATH"
+        HOMEPAGE="$GITHUB_URL"
     fi
 
-    # 3. Build the JSON object to match your ProjectCard props
+    # 3. Build the JSON object
     NEW_ENTRY=$(jq -n \
         --arg name "$NAME" \
         --arg desc "$DESC" \
         --arg page "$HOMEPAGE" \
         --arg git "$GITHUB_URL" \
-        --arg img "$LOCAL_IMG_PATH" \
+        --arg img "$IMG_PATH" \
         --argjson topics "$TOPICS" \
         '{
             name: $name,

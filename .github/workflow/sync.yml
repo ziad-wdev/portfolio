@@ -7,6 +7,9 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -21,8 +24,17 @@ jobs:
 
       - name: Commit and Push changes
         run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
-          git add src/data/projects-data.json src/assets/projects/*
-          git commit -m 'chore: sync project data and images [skip ci]'
-          git push
+          # 1. PRO-TIP: Use the official GitHub Actions bot identity for cleaner commit logs
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+          # 2. SAFER ADD: Point to the directory instead of using the wildcard (*)
+          # If the folder is empty on the first run, `public/projects/*` throws an error.
+          git add src/data/projects-data.json public/projects/
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m 'chore: sync project data and images [skip ci]'
+            git push
+          fi
