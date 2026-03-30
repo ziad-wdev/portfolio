@@ -15,7 +15,7 @@ const github = axios.create({
 });
 
 async function getScreenshot(url, fileName) {
-  const microlinkUrl = `https://api.microlink.io?url=${encodeURIComponent(url)}&screenshot=true&meta=false&type=jpeg&viewport.width=1920&viewport.height=1080`;
+  const microlinkUrl = `https://api.microlink.io?url=${encodeURIComponent(url)}&screenshot=true&meta=false&type=jpeg&viewport.width=1280&viewport.height=720`;
 
   // Retry logic using a simple loop
   for (let i = 0; i < 3; i++) {
