@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import { Icon } from '@iconify/react';
 import axios from 'axios';
 
-const GITHUB_TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
-
 export default function Projects() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,14 +20,14 @@ export default function Projects() {
         }
 
         // 2. Fetch GitHub Data
-        const { data: repo } = await axios.get(`https://api.github.com/repos/ziad-wdev/${name}`, {
-          headers: GITHUB_TOKEN ? { Authorization: `Bearer ${GITHUB_TOKEN}` } : {}
-        });
+        const { data: repo } = await axios(`https://api.github.com/repos/ziad-wdev/${name}`);
 
         // 3. Fetch Screenshot (only if homepage exists)
         let screenshot = null;
         if (repo.homepage) {
-          const scrRes = await axios(`https://api.microlink.io?screenshot.type=jpeg&viewport.width=1920&viewport.height=1080&url=${repo.homepage}`);
+          const scrRes = await axios(
+            `https://api.microlink.io?screenshot.type=jpeg&viewport.width=1920&viewport.height=1080&url=${repo.homepage}`
+          );
           screenshot = scrRes.data?.data?.screenshot?.url;
         }
 
