@@ -5,7 +5,6 @@ import ProjectCard from './ProjectCard';
 
 export default function Projects() {
   const projects = projectsData;
-  console.log(projects);
 
   return (
     <section id='projects'>

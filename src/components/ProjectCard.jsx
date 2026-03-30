@@ -1,5 +1,5 @@
 export default function ProjectCard({ key, project }) {
-  const { name, description, topics, homePage, githubUrl, imageUrl } = project;
+  const { name, description, topics, pageUrl, githubUrl, imageUrl } = project;
 
   return (
     <div key={key} className='card group flex flex-col overflow-hidden p-0'>
@@ -22,7 +22,7 @@ export default function ProjectCard({ key, project }) {
         </div>
         <div className='flex gap-4 text-center text-sm'>
           <a
-            href={homePage}
+            href={pageUrl}
             target='_blank'
             className='bg-accent hover:bg-accent-dark flex-center flex-1 gap-2 rounded-lg p-2 font-medium text-white'
           >
