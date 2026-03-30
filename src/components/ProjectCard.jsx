@@ -1,3 +1,5 @@
+import { Icon } from '@iconify/react';
+
 export default function ProjectCard({ key, project }) {
   const { name, description, topics, pageUrl, githubUrl, imageUrl } = project;
 
