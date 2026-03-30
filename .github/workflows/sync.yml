@@ -28,7 +28,7 @@ jobs:
       - name: Run Sync Script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node .github/workflow/sync-assets.mjs
+        run: node .github/workflows/sync-assets.mjs
 
       - name: Commit and Push changes
         run: |
