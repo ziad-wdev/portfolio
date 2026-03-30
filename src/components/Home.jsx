@@ -1,4 +1,4 @@
-import homeImg from '../assets/homeImg.jpg';
+import homeImg from '../assets/homeImg.avif';
 import StackIcon from './StackIcon';
 
 export default function Home() {

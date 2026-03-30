@@ -7,15 +7,32 @@ export default function Projects() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    const projectsNames = ['html5-css3-project', 'bootstrap-project', 'tailwindcss-project'];
+    const projectsNames = ['AESTHETIC', 'FreshFlavor', 'DigitalPro'];
 
     async function fetchProject(name) {
+      const cachedData = localStorage.getItem(`repo-${name}`);
+
+      if (cachedData) {
+        const { data, timestamp } = JSON.parse(cachedData);
+        if (Date.now() - timestamp < 3600000) return data;
+      }
+
       const response = await axios(`https://api.github.com/repos/ziad-wdev/${name}`);
+
+      localStorage.setItem(
+        `repo-${name}`,
+        JSON.stringify({
+          data: response.data,
+          timestamp: Date.now()
+        })
+      );
       return response.data;
     }
 
     async function fetchScreenshot(homepage) {
-      const response = await axios(`https://api.microlink.io?screenshot&url=${homepage}`);
+      const response = await axios(
+        `https://api.microlink.io?screenshot.type=jpeg&viewport.width=1920&viewport.height=1080&viewport.deviceScaleFactor=2&ttl=1d&staleTtl=0&url=${homepage}`
+      );
       return response.data.data.screenshot.url;
     }
 
@@ -50,7 +67,7 @@ export default function Projects() {
           <a
             href='https://github.com/ziad-wdev'
             target='_blank'
-            className='flex-center text-accent ml-auto gap-2 hover:underline'
+            className='flex-center text-accent dark:text-accent-light ml-auto gap-2 hover:underline'
           >
             View all on GitHub <Icon icon='lucide:chevron-right' />
           </a>
