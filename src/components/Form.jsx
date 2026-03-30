@@ -28,7 +28,7 @@ export default function Form() {
           TEMPLATE_ID,
           {
             senderName: value.name,
-            SenderEmail: value.email,
+            senderEmail: value.email,
             message: value.message,
             email: 'ziadahmed2371@gmail.com',
             date: new Date().toLocaleString('en-US', { dateStyle: 'long', timeStyle: 'short' })
