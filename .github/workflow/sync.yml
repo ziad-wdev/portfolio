@@ -17,31 +17,28 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Debug - List Files
-        run: |
-          echo "Current Directory:"
-          pwd
-          echo "File List:"
-          ls -R
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install axios # This makes 'import axios' work
 
       - name: Run Sync Script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          chmod +x sync-assets.sh
-          bash -e sync-assets.sh
+        run: node sync-assets.mjs
 
       - name: Commit and Push changes
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
           git add src/data/projects-data.json public/projects/
 
-          # Use a more descriptive commit message
           if git diff --staged --quiet; then
-            echo "No changes detected in project data or assets."
+            echo "No changes"
           else
-            git commit -m "chore: auto-sync assets $(date +'%Y-%m-%d') [skip ci]"
+            git commit -m 'chore: sync project data and images [skip ci]'
             git push
           fi
