@@ -19,17 +19,13 @@ jobs:
 
       - name: Run Sync Script
         run: |
-          chmod +x sync-assets.sh
-          ./sync-assets.sh
+          bash sync-assets.sh
 
       - name: Commit and Push changes
         run: |
-          # 1. PRO-TIP: Use the official GitHub Actions bot identity for cleaner commit logs
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-          # 2. SAFER ADD: Point to the directory instead of using the wildcard (*)
-          # If the folder is empty on the first run, `public/projects/*` throws an error.
           git add src/data/projects-data.json public/projects/
 
           if git diff --staged --quiet; then
