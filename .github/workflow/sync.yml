@@ -17,17 +17,27 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Debug - List Files
+        run: |
+          echo "Current Directory:"
+          pwd
+          echo "File List:"
+          ls -R
+
       - name: Run Sync Script
         run: |
-          bash sync-assets.sh
+          # Use 'bash -e' to exit immediately on any error inside the script
+          # Use the explicit filename. Ensure it's in your root folder!
+          bash -e sync-assets.sh
 
       - name: Commit and Push changes
         run: |
           git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          
+          # Add the specific folder and file
           git add src/data/projects-data.json public/projects/
-
+          
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else

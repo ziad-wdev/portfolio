@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react';
 
-import { projectsData } from '../data/projects-data.json';
+import projectsData from '../data/projects-data.json';
 import ProjectCard from './ProjectCard';
 
 export default function Projects() {
