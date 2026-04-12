@@ -1,8 +1,10 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --font-roboto: var(--font-roboto);
+
   --color-accent-light: var(--color-indigo-300);
   --color-accent: var(--color-indigo-500);
   --color-accent-dark: var(--color-indigo-700);
@@ -35,6 +37,10 @@
     @apply transition-colors;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-light text-dark dark:text-light selection:bg-accent/20 selection:text-accent dark:bg-dark;
   }
@@ -43,6 +49,10 @@
   section,
   footer {
     @apply flex-center px-8 py-24;
+  }
+
+  [tabindex="-1"] {
+    @apply p-0;
   }
 
   section:nth-of-type(odd) {

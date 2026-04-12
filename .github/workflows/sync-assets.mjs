@@ -1,17 +1,17 @@
-import fs from 'fs/promises';
-import path from 'path';
+import fs from "fs/promises";
+import path from "path";
 
-import axios from 'axios';
+import axios from "axios";
 
-const REPO_OWNER = 'ziad-wdev';
-const REPOS = ['AESTHETIC', 'FreshFlavor', 'DigitalPro'];
-const IMAGE_DIR = './public/projects';
-const DATA_FILE = './src/data/projects-data.json';
+const REPO_OWNER = "ziad-wdev";
+const REPOS = ["AESTHETIC", "FreshFlavor", "DigitalPro"];
+const IMAGE_DIR = "/public/projects";
+const DATA_FILE = "/src/data/projects-data.json";
 
 // Setup Axios instance with GitHub Auth
 const github = axios.create({
-  baseURL: 'https://api.github.com',
-  headers: process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {}
+  baseURL: "https://api.github.com",
+  headers: process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {},
 });
 
 async function getScreenshot(url, fileName) {
@@ -25,14 +25,14 @@ async function getScreenshot(url, fileName) {
       const downloadUrl = response.data.data?.screenshot?.url;
 
       if (downloadUrl) {
-        const image = await axios.get(downloadUrl, { responseType: 'arraybuffer' });
+        const image = await axios.get(downloadUrl, { responseType: "arraybuffer" });
         await fs.writeFile(path.join(IMAGE_DIR, fileName), image.data);
         return `/projects/${fileName}`;
       }
     } catch (error) {
       console.error(`Attempt ${i + 1} failed: ${error.message}`);
       if (i === 2) return null; // Final failure
-      await new Promise(r => setTimeout(r, 3000)); // Wait 3s before retry
+      await new Promise((r) => setTimeout(r, 3000)); // Wait 3s before retry
     }
   }
 }
@@ -48,22 +48,22 @@ async function sync() {
 
       const { data } = await github.get(`/repos/${REPO_OWNER}/${repoName}`);
 
-      const homepage = data.homepage || '';
+      const homepage = data.homepage || "";
       const fileName = `${repoName.toLowerCase()}.jpeg`;
       let imgPath = `https://via.placeholder.com/1920x1080.png?text=Preview+Coming+Soon`;
 
-      if (homepage && homepage !== 'null') {
+      if (homepage && homepage !== "null") {
         const savedPath = await getScreenshot(homepage, fileName);
         if (savedPath) imgPath = savedPath;
       }
 
       projectsData.push({
-        name: data.name.replaceAll('-', ' ') || repoName.replaceAll('-', ' '),
-        description: data.description || 'A modern web application.',
+        name: data.name.replaceAll("-", " ") || repoName.replaceAll("-", " "),
+        description: data.description || "A modern web application.",
         topics: data.topics || [],
         pageUrl: homepage || data.html_url,
         githubUrl: data.html_url,
-        imageUrl: imgPath
+        imageUrl: imgPath,
       });
     } catch (err) {
       console.error(`Error processing ${repoName}:`, err.response?.data?.message || err.message);
@@ -71,7 +71,7 @@ async function sync() {
   }
 
   await fs.writeFile(DATA_FILE, JSON.stringify(projectsData, null, 2));
-  console.log('\nSync Complete!');
+  console.log("\nSync Complete!");
 }
 
 sync();
