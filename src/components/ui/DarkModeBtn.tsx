@@ -7,12 +7,18 @@ import { useScroll } from "@/utils/useScroll";
 
 export default function DarkModeBtn() {
   const isScrolled = useScroll();
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const stored = localStorage.getItem("darkMode");
-    return stored ? JSON.parse(stored) : false;
-  });
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
+    function handleThemeStorage() {
+      const stored = localStorage.getItem("darkMode");
+      if (stored) {
+        setIsDarkMode(JSON.parse(stored));
+      }
+    }
+
+    handleThemeStorage();
+
     document.body.classList.toggle("dark", isDarkMode);
     localStorage.setItem("darkMode", JSON.stringify(isDarkMode));
   }, [isDarkMode]);

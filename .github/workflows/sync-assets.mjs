@@ -6,7 +6,7 @@ import axios from "axios";
 const REPO_OWNER = "ziad-wdev";
 const REPOS = ["AESTHETIC", "FreshFlavor", "DigitalPro"];
 const IMAGE_DIR = "./public/projects";
-const DATA_FILE = "./src/data/projects-data.json";
+const DATA_FILE = "./src/data/projectData.json";
 
 // Setup Axios instance with GitHub Auth
 const github = axios.create({
