@@ -4,9 +4,9 @@ import emailjs from "@emailjs/browser";
 import { AnyFieldApi, useForm } from "@tanstack/react-form";
 import { toast } from "sonner";
 
-const SERVICE_ID = process.env.EMAILJS_SERVICE_ID as string;
-const TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID as string;
-const PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY as string;
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string;
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string;
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string;
 
 type FieldErrorProps = {
   field: AnyFieldApi;
@@ -44,8 +44,9 @@ export default function Form() {
         );
         toast.success("Message sent! I'll get back to you soon.");
         form.reset();
-      } catch {
+      } catch (error) {
         toast.error("Something went wrong. Please try again.");
+        console.log(error);
       }
     },
   });
