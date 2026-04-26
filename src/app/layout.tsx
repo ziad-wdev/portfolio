@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "sonner";
+import Header from "@/components/sections/Header";
 
 export const metadata: Metadata = {
   title: "ziad.dev",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="flex min-h-full flex-col">
+        <Header />
         {children}
         <Toaster theme="dark" />
       </body>

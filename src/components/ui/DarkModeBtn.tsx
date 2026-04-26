@@ -18,10 +18,12 @@ export default function DarkModeBtn() {
     }
 
     handleThemeStorage();
+  }, []);
 
+  useEffect(() => {
     document.body.classList.toggle("dark", isDarkMode);
     localStorage.setItem("darkMode", JSON.stringify(isDarkMode));
-  }, [isDarkMode]);
+  });
 
   return (
     <button
