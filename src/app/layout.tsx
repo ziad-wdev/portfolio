@@ -1,17 +1,20 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { Toaster } from "sonner";
-import Header from "@/components/sections/Header";
+import type { Metadata } from 'next'
+
+import './globals.css'
+
+import { Toaster } from 'sonner'
+
+import Header from '@/components/sections/Header'
 
 export const metadata: Metadata = {
-  title: "ziad.dev",
-  description: "",
-};
+  title: 'ziad.dev',
+  description: '',
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
@@ -21,5 +24,5 @@ export default function RootLayout({
         <Toaster theme="dark" />
       </body>
     </html>
-  );
+  )
 }

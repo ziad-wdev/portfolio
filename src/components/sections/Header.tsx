@@ -1,20 +1,19 @@
-"use client";
+'use client'
 
-import Nav from "@/components/ui/Nav";
-import DarkModeBtn from "@/components/ui/DarkModeBtn";
-
-import { cn } from "@/utils/cn";
-import { useScroll } from "@/utils/useScroll";
+import DarkModeBtn from '@/components/ui/DarkModeBtn'
+import Nav from '@/components/ui/Nav'
+import { cn } from '@/utils/cn'
+import { useScroll } from '@/utils/useScroll'
 
 export default function Header() {
-  const isScrolled = useScroll();
+  const isScrolled = useScroll()
 
   return (
     <header
       className={cn(
-        "bg-light dark:bg-dark text-dark-3 dark:text-light-3 fixed top-0 right-0 left-0 z-50 py-6 transition-all",
+        'bg-light dark:bg-dark text-dark-3 dark:text-light-3 fixed top-0 right-0 left-0 z-50 py-6 transition-all',
         {
-          "bg-light-2/75 dark:bg-dark-2/75 py-4 backdrop-blur-md": isScrolled,
+          'bg-light-2/75 dark:bg-dark-2/75 py-4 backdrop-blur-md': isScrolled,
         },
       )}
     >
@@ -26,5 +25,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  );
+  )
 }

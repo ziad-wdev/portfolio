@@ -1,7 +1,9 @@
-import { Icon } from "@iconify/react";
-import Link from "next/link";
-import ProjectCard from "@/components/ui/ProjectCard";
-import projectData from "@/data/projectData.json";
+import Link from 'next/link'
+
+import { Icon } from '@iconify/react'
+
+import ProjectCard from '@/components/ui/ProjectCard'
+import projectData from '@/data/projectData.json'
 
 export default function Projects() {
   return (
@@ -11,7 +13,8 @@ export default function Projects() {
           <div className="space-y-4">
             <h2>Featured Projects</h2>
             <p className="max-w-md text-base">
-              A selection of my recent work, ranging from complex web platforms to creative experiments.
+              A selection of my recent work, ranging from complex web platforms to creative
+              experiments.
             </p>
           </div>
           <Link
@@ -29,5 +32,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  );
+  )
 }

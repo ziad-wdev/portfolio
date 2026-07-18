@@ -6,18 +6,19 @@ export default function About() {
           <h2>About My Journey</h2>
           <div className="space-y-4">
             <p>
-              I started my coding journey a year ago, driven by a curiosity for how things work on the internet. What
-              began as simple HTML/CSS experiments quickly evolved into a passion for building complex, scalable web
-              applications.
+              I started my coding journey a year ago, driven by a curiosity for how things work on
+              the internet. What began as simple HTML/CSS experiments quickly evolved into a passion
+              for building complex, scalable web applications.
             </p>
             <p>
-              Today, I specialize in full-stack development, focusing on creating seamless user experiences backed by
-              robust server-side logic. I believe in writing clean, maintainable code and constantly learning new
-              technologies to stay at the forefront of the industry.
+              Today, I specialize in full-stack development, focusing on creating seamless user
+              experiences backed by robust server-side logic. I believe in writing clean,
+              maintainable code and constantly learning new technologies to stay at the forefront of
+              the industry.
             </p>
             <p>
-              When I&apos;m not coding, you can find me exploring new video games, reading about science theories, or
-              experimenting with new technologies.
+              When I&apos;m not coding, you can find me exploring new video games, reading about
+              science theories, or experimenting with new technologies.
             </p>
           </div>
         </div>
@@ -41,8 +42,10 @@ export default function About() {
           </div>
           <div className="dark-card">
             <h4 className="mb-4 flex items-center gap-2">
-              <span className="bg-accent inline-block size-2 rounded-full"></span> Backend{" "}
-              <span className="text-[12px] font-bold text-yellow-600 dark:text-yellow-500">( WiP )</span>
+              <span className="bg-accent inline-block size-2 rounded-full"></span> Backend{' '}
+              <span className="text-[12px] font-bold text-yellow-600 dark:text-yellow-500">
+                ( WiP )
+              </span>
             </h4>
             <div className="flex flex-wrap gap-2">
               <span className="skill-badge">Node.js</span>
@@ -64,5 +67,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  );
+  )
 }

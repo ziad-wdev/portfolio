@@ -1,20 +1,21 @@
-import { Icon } from "@iconify/react";
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { Icon } from '@iconify/react'
 
 type ProjectCardProps = {
   project: {
-    name: string;
-    description: string;
-    topics: string[];
-    pageUrl: string;
-    githubUrl: string;
-    imageUrl: string;
-  };
-};
+    name: string
+    description: string
+    topics: string[]
+    pageUrl: string
+    githubUrl: string
+    imageUrl: string
+  }
+}
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const { name, description, topics, pageUrl, githubUrl, imageUrl } = project;
+  const { name, description, topics, pageUrl, githubUrl, imageUrl } = project
 
   return (
     <div className="card group flex flex-col overflow-hidden p-0">
@@ -55,5 +56,5 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,7 +1,8 @@
-import { Icon } from "@iconify/react";
+import Link from 'next/link'
 
-import Form from "@/components/ui/Form";
-import Link from "next/link";
+import { Icon } from '@iconify/react'
+
+import Form from '@/components/ui/Form'
 
 export default function Contact() {
   return (
@@ -10,8 +11,9 @@ export default function Contact() {
         <div className="w-full space-y-6">
           <h2>Get in Touch</h2>
           <p className="mb-8">
-            Have a project in mind or just want to say hi? Feel free to reach out. I&apos;m always open to discussing
-            new projects, creative ideas or opportunities to be part of your visions.
+            Have a project in mind or just want to say hi? Feel free to reach out. I&apos;m always
+            open to discussing new projects, creative ideas or opportunities to be part of your
+            visions.
           </p>
           <div className="flex gap-4">
             <Icon
@@ -49,5 +51,5 @@ export default function Contact() {
         <Form />
       </div>
     </section>
-  );
+  )
 }

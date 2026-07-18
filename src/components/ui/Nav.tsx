@@ -1,31 +1,31 @@
-"use client";
+'use client'
 
-import Link from "next/link";
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
-import { useEffect, useState } from "react";
-import { Icon } from "@iconify/react";
+import { Icon } from '@iconify/react'
 
-import { cn } from "@/utils/cn";
+import { cn } from '@/utils/cn'
 
 export default function Nav() {
-  const [isOpened, setIsOpened] = useState(false);
+  const [isOpened, setIsOpened] = useState(false)
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setIsOpened(false);
-    });
-    window.addEventListener("resize", () => {
-      setIsOpened(false);
-    });
+    window.addEventListener('scroll', () => {
+      setIsOpened(false)
+    })
+    window.addEventListener('resize', () => {
+      setIsOpened(false)
+    })
     return () => {
-      window.removeEventListener("scroll", () => {
-        setIsOpened(false);
-      });
-      window.removeEventListener("resize", () => {
-        setIsOpened(false);
-      });
-    };
-  }, []);
+      window.removeEventListener('scroll', () => {
+        setIsOpened(false)
+      })
+      window.removeEventListener('resize', () => {
+        setIsOpened(false)
+      })
+    }
+  }, [])
 
   return (
     <>
@@ -37,9 +37,9 @@ export default function Nav() {
       </button>
       <nav
         className={cn(
-          "bg-light-2 dark:bg-dark-2 border-light-3 dark:border-dark-3 absolute top-full right-0 left-0 flex origin-top flex-col gap-2 border-y px-4 py-2 transition-all sm:hidden",
+          'bg-light-2 dark:bg-dark-2 border-light-3 dark:border-dark-3 absolute top-full right-0 left-0 flex origin-top flex-col gap-2 border-y px-4 py-2 transition-all sm:hidden',
           {
-            "scale-y-0 opacity-0": !isOpened,
+            'scale-y-0 opacity-0': !isOpened,
           },
         )}
       >
@@ -95,5 +95,5 @@ export default function Nav() {
         </Link>
       </nav>
     </>
-  );
+  )
 }

@@ -1,7 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
 
-import StackIcon from "@/components/ui/StackIcon";
+import StackIcon from '@/components/ui/StackIcon'
 
 export default function Home() {
   return (
@@ -12,11 +12,12 @@ export default function Home() {
             available for new opportunities
           </span>
           <h1 className="mb-6">
-            Hi, I&apos;m <span className="text-accent dark:text-accent-light">Ziad</span>. Building digital experiences
-            that matter.
+            Hi, I&apos;m <span className="text-accent dark:text-accent-light">Ziad</span>. Building
+            digital experiences that matter.
           </h1>
           <p className="mb-8 lg:text-xl">
-            A full-stack developer passionate about creating clean, performant, and user-centric applications.
+            A full-stack developer passionate about creating clean, performant, and user-centric
+            applications.
           </p>
           <div className="flex-center flex-wrap gap-4 lg:justify-start">
             <Link
@@ -60,5 +61,5 @@ export default function Home() {
         </div>
       </div>
     </section>
-  );
+  )
 }

@@ -1,21 +1,21 @@
-"use client";
+'use client'
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
 export function useScroll() {
-  const scrollMargin = 25;
-  const [isScrolled, setIsScrolled] = useState(false);
+  const scrollMargin = 25
+  const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > scrollMargin);
-    };
+      setIsScrolled(window.scrollY > scrollMargin)
+    }
 
-    handleScroll();
+    handleScroll()
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
-  return isScrolled;
+  return isScrolled
 }

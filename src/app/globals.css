@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -51,7 +51,7 @@
     @apply flex-center px-8 py-24;
   }
 
-  [tabindex="-1"] {
+  [tabindex='-1'] {
     @apply p-0;
   }
 

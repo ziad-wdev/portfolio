@@ -1,9 +1,9 @@
-import { Icon } from "@iconify/react";
+import { Icon } from '@iconify/react'
 
 type Props = {
-  icon: string;
-  text: string;
-};
+  icon: string
+  text: string
+}
 
 export default function StackIcon({ icon, text }: Props) {
   return (
@@ -14,5 +14,5 @@ export default function StackIcon({ icon, text }: Props) {
       ></Icon>
       <span className="text-2xs font-bold tracking-wider uppercase">{text}</span>
     </div>
-  );
+  )
 }
