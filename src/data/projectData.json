@@ -10,7 +10,7 @@
     ],
     "pageUrl": "https://ziad-wdev.github.io/AESTHETIC/",
     "githubUrl": "https://github.com/ziad-wdev/AESTHETIC",
-    "imageUrl": "https://via.placeholder.com/1920x1080.png?text=Preview+Coming+Soon"
+    "imageUrl": "/projects/aesthetic.jpeg"
   },
   {
     "name": "Fresh Flavor",
@@ -23,7 +23,7 @@
     ],
     "pageUrl": "https://ziad-wdev.github.io/FreshFlavor/",
     "githubUrl": "https://github.com/ziad-wdev/FreshFlavor",
-    "imageUrl": "https://via.placeholder.com/1920x1080.png?text=Preview+Coming+Soon"
+    "imageUrl": "/projects/freshflavor.jpeg"
   },
   {
     "name": "Digital Pro",
@@ -36,7 +36,7 @@
     ],
     "pageUrl": "https://ziad-wdev.github.io/DigitalPro/",
     "githubUrl": "https://github.com/ziad-wdev/DigitalPro",
-    "imageUrl": "https://via.placeholder.com/1920x1080.png?text=Preview+Coming+Soon"
+    "imageUrl": "/projects/digitalpro.jpeg"
   },
   {
     "name": "Store",
@@ -50,6 +50,6 @@
     ],
     "pageUrl": "https://store-two-mu.vercel.app/",
     "githubUrl": "https://github.com/ziad-wdev/Store",
-    "imageUrl": "https://via.placeholder.com/1920x1080.png?text=Preview+Coming+Soon"
+    "imageUrl": "/projects/store.jpeg"
   }
 ]
