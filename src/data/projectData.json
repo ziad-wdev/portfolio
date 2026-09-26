@@ -1,44 +1,5 @@
 [
   {
-    "name": "AESTHETIC",
-    "description": "A foundational web development project demonstrating the power of semantic HTML5 and modern CSS3 layout techniques.",
-    "topics": [
-      "css3",
-      "html5",
-      "responsive-design",
-      "web-standards"
-    ],
-    "pageUrl": "https://ziad-wdev.github.io/AESTHETIC/",
-    "githubUrl": "https://github.com/ziad-wdev/AESTHETIC",
-    "imageUrl": "/projects/aesthetic.jpeg"
-  },
-  {
-    "name": "Fresh Flavor",
-    "description": "A professional, mobile-first landing page built with Bootstrap to ensure cross-browser compatibility and a modern aesthetic.",
-    "topics": [
-      "bootstrap5",
-      "css3",
-      "html5",
-      "javascript"
-    ],
-    "pageUrl": "https://ziad-wdev.github.io/FreshFlavor/",
-    "githubUrl": "https://github.com/ziad-wdev/FreshFlavor",
-    "imageUrl": "/projects/freshflavor.jpeg"
-  },
-  {
-    "name": "Digital Pro",
-    "description": "A modern, fully responsive marketing agency landing page featuring smooth-scroll navigation and dynamic service cards.",
-    "topics": [
-      "javascript",
-      "react",
-      "tailwindcss",
-      "vite"
-    ],
-    "pageUrl": "https://ziad-wdev.github.io/DigitalPro/",
-    "githubUrl": "https://github.com/ziad-wdev/DigitalPro",
-    "imageUrl": "/projects/digitalpro.jpeg"
-  },
-  {
     "name": "E-Commerce API",
     "description": "Production-ready Express.js e-commerce REST API with JWT authentication, product catalog, cart & wishlist management, orders, reviews, admin analytics, Redis, Cloudinary, and Stripe/PayPal/Paymob payments.",
     "topics": [
@@ -66,8 +27,23 @@
   },
   {
     "name": "E-Commerce Platform (Monorepo)",
-    "description": "A modern web application.",
-    "topics": [],
+    "description": "A scalable React e-commerce monorepo featuring a customer storefront and admin dashboard. Built with Turborepo, Vite, Tailwind CSS, and Stripe to demonstrate modern frontend architecture and code sharing.",
+    "topics": [
+      "admin-dashboard",
+      "e-commerce",
+      "frontend-architecture",
+      "monorepo",
+      "npm-workspaces",
+      "rea",
+      "react",
+      "react-query",
+      "reactjs",
+      "storefront",
+      "stripe",
+      "tailwindcss",
+      "turborepo",
+      "vite"
+    ],
     "pageUrl": "https://e-commerce-store-mu-eight.vercel.app/",
     "githubUrl": "https://github.com/team-9-frontend/e-commerce",
     "imageUrl": "/projects/e-commerceplatform(monorepo).jpeg"
@@ -85,5 +61,44 @@
     "pageUrl": "https://store-two-mu.vercel.app/",
     "githubUrl": "https://github.com/ziad-wdev/Store",
     "imageUrl": "/projects/next.jse-commerceplatform.jpeg"
+  },
+  {
+    "name": "Digital Pro",
+    "description": "A modern, fully responsive marketing agency landing page featuring smooth-scroll navigation and dynamic service cards.",
+    "topics": [
+      "javascript",
+      "react",
+      "tailwindcss",
+      "vite"
+    ],
+    "pageUrl": "https://ziad-wdev.github.io/DigitalPro/",
+    "githubUrl": "https://github.com/ziad-wdev/DigitalPro",
+    "imageUrl": "/projects/digitalpro.jpeg"
+  },
+  {
+    "name": "Fresh Flavor",
+    "description": "A professional, mobile-first landing page built with Bootstrap to ensure cross-browser compatibility and a modern aesthetic.",
+    "topics": [
+      "bootstrap5",
+      "css3",
+      "html5",
+      "javascript"
+    ],
+    "pageUrl": "https://ziad-wdev.github.io/FreshFlavor/",
+    "githubUrl": "https://github.com/ziad-wdev/FreshFlavor",
+    "imageUrl": "/projects/freshflavor.jpeg"
+  },
+  {
+    "name": "AESTHETIC",
+    "description": "A foundational web development project demonstrating the power of semantic HTML5 and modern CSS3 layout techniques.",
+    "topics": [
+      "css3",
+      "html5",
+      "responsive-design",
+      "web-standards"
+    ],
+    "pageUrl": "https://ziad-wdev.github.io/AESTHETIC/",
+    "githubUrl": "https://github.com/ziad-wdev/AESTHETIC",
+    "imageUrl": "/projects/aesthetic.jpeg"
   }
 ]
