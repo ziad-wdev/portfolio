@@ -31,14 +31,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div className="flex flex-1 flex-col p-6">
         <h3 className="mb-2 truncate capitalize">{name}</h3>
         <p className="mb-4 line-clamp-2 text-base">{description}</p>
-        <div className="text-accent dark:text-accent-light flex flex-1 flex-wrap gap-2 text-xs font-bold tracking-wider uppercase">
-          {topics?.map((topic) => (
+        <div className="text-accent dark:text-accent-light flex flex-wrap gap-2 text-xs font-bold tracking-wider uppercase">
+          {topics?.slice(0, 6).map((topic) => (
             <span key={topic} className="last:mb-6">
               #{topic}
             </span>
           ))}
         </div>
-        <div className="flex gap-4 text-center text-sm">
+        <div className="mt-auto flex gap-4 text-center text-sm">
           <Link
             href={pageUrl}
             target="_blank"

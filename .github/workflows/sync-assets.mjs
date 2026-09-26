@@ -5,21 +5,6 @@ import axios from 'axios'
 
 const PROJECTS = [
   {
-    title: 'AESTHETIC',
-    repo: 'ziad-wdev/AESTHETIC',
-    url: 'https://ziad-wdev.github.io/AESTHETIC/',
-  },
-  {
-    title: 'Fresh Flavor',
-    repo: 'ziad-wdev/FreshFlavor',
-    url: 'https://ziad-wdev.github.io/FreshFlavor/',
-  },
-  {
-    title: 'Digital Pro',
-    repo: 'ziad-wdev/DigitalPro',
-    url: 'https://ziad-wdev.github.io/DigitalPro/',
-  },
-  {
     title: 'E-Commerce API',
     repo: 'team-5-backend/e-commerce-api',
     url: 'https://e-commerce-api-blond-eta.vercel.app/api/v1/docs',
@@ -33,6 +18,21 @@ const PROJECTS = [
     title: 'Next.js E-Commerce Platform',
     repo: 'ziad-wdev/Store',
     url: 'https://store-two-mu.vercel.app/',
+  },
+  {
+    title: 'Digital Pro',
+    repo: 'ziad-wdev/DigitalPro',
+    url: 'https://ziad-wdev.github.io/DigitalPro/',
+  },
+  {
+    title: 'Fresh Flavor',
+    repo: 'ziad-wdev/FreshFlavor',
+    url: 'https://ziad-wdev.github.io/FreshFlavor/',
+  },
+  {
+    title: 'AESTHETIC',
+    repo: 'ziad-wdev/AESTHETIC',
+    url: 'https://ziad-wdev.github.io/AESTHETIC/',
   },
 ]
 
