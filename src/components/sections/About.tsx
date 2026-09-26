@@ -28,40 +28,46 @@ export default function About() {
               <span className="bg-accent inline-block size-2 rounded-full"></span> Frontend
             </h4>
             <div className="flex flex-wrap gap-2">
-              <span className="skill-badge">Bootstrap</span>
-              <span className="skill-badge">Tailwind CSS</span>
-              <span className="skill-badge">Framer Motion</span>
+              <span className="skill-badge">HTML/CSS</span>
+              <span className="skill-badge">JavaScript</span>
               <span className="skill-badge">TypeScript</span>
               <span className="skill-badge">React</span>
-              <span className="skill-badge">Vite</span>
               <span className="skill-badge">Next.js</span>
-              <span className="skill-badge">Redux</span>
+              <span className="skill-badge">Vite</span>
+              <span className="skill-badge">Tailwind CSS</span>
+              <span className="skill-badge">Redux Toolkit</span>
+              <span className="skill-badge">RTK Query</span>
               <span className="skill-badge">TanStack Query</span>
-              <span className="skill-badge">Zustand</span>
+              <span className="skill-badge">TanStack Form</span>
             </div>
           </div>
           <div className="dark-card">
             <h4 className="mb-4 flex items-center gap-2">
-              <span className="bg-accent inline-block size-2 rounded-full"></span> Backend{' '}
-              <span className="text-[12px] font-bold text-yellow-600 dark:text-yellow-500">
-                ( WiP )
-              </span>
+              <span className="bg-accent inline-block size-2 rounded-full"></span> Backend
             </h4>
             <div className="flex flex-wrap gap-2">
               <span className="skill-badge">Node.js</span>
+              <span className="skill-badge">Express.js</span>
               <span className="skill-badge">MongoDB</span>
+              <span className="skill-badge">Mongoose</span>
+              <span className="skill-badge">REST APIs</span>
+              <span className="skill-badge">JWT</span>
+              <span className="skill-badge">Redis</span>
             </div>
           </div>
           <div className="dark-card">
             <h4 className="mb-4 flex items-center gap-2">
-              <span className="bg-accent inline-block size-2 rounded-full"></span> Tools
+              <span className="bg-accent inline-block size-2 rounded-full"></span> Tools &amp;
+              Integrations
             </h4>
             <div className="flex flex-wrap gap-2">
-              <span className="skill-badge">Git</span>
-              <span className="skill-badge">GitHub</span>
+              <span className="skill-badge">Git &amp; GitHub</span>
+              <span className="skill-badge">Docker</span>
+              <span className="skill-badge">Turborepo</span>
               <span className="skill-badge">Vercel</span>
-              <span className="skill-badge">npm</span>
-              <span className="skill-badge">Zed</span>
+              <span className="skill-badge">Vitest</span>
+              <span className="skill-badge">Stripe &amp; PayPal</span>
+              <span className="skill-badge">Cloudinary</span>
             </div>
           </div>
         </div>

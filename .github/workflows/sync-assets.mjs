@@ -19,7 +19,21 @@ const PROJECTS = [
     repo: 'ziad-wdev/DigitalPro',
     url: 'https://ziad-wdev.github.io/DigitalPro/',
   },
-  { title: 'Store', repo: 'ziad-wdev/Store', url: 'https://store-two-mu.vercel.app/' },
+  {
+    title: 'E-Commerce API',
+    repo: 'team-5-backend/e-commerce-api',
+    url: 'https://e-commerce-api-blond-eta.vercel.app/api/v1/docs',
+  },
+  {
+    title: 'E-Commerce Platform (Monorepo)',
+    repo: 'team-9-frontend/e-commerce',
+    url: 'https://e-commerce-store-mu-eight.vercel.app/',
+  },
+  {
+    title: 'Next.js E-Commerce Platform',
+    repo: 'ziad-wdev/Store',
+    url: 'https://store-two-mu.vercel.app/',
+  },
 ]
 
 const IMAGE_DIR = './public/projects'

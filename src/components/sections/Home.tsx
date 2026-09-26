@@ -16,8 +16,8 @@ export default function Home() {
             digital experiences that matter.
           </h1>
           <p className="mb-8 lg:text-xl">
-            A full-stack developer passionate about creating clean, performant, and user-centric
-            applications.
+            A full-stack developer specializing in the MERN stack, Next.js, and TypeScript,
+            passionate about creating clean, performant, and user-centric applications.
           </p>
           <div className="flex-center flex-wrap gap-4 lg:justify-start">
             <Link
@@ -51,10 +51,10 @@ export default function Home() {
             <h4 className="mb-4">Tech Stack</h4>
             <div className="grid grid-cols-3 gap-4">
               <StackIcon icon="mdi:language-typescript" text="TypeScript" />
-              <StackIcon icon="mdi:tailwind" text="Tailwind CSS" />
               <StackIcon icon="mdi:react" text="React" />
               <StackIcon icon="devicon-plain:nextjs" text="Next.js" />
               <StackIcon icon="mdi:nodejs" text="Node.js" />
+              <StackIcon icon="simple-icons:express" text="Express.js" />
               <StackIcon icon="devicon-plain:mongodb" text="MongoDB" />
             </div>
           </div>
